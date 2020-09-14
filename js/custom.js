@@ -104,8 +104,22 @@ $(document).ready(function () {
     });
 
     //animatedModal
-    $("#demo01,#demo02,#demo03,#demo04,#demo05,#demo06,#demo07,#demo08,#demo09").animatedModal();
+    $("#demo01").animatedModal({
+        modalTarget: 'blogModal',
+    });
+    $("#demo02").animatedModal({
+        modalTarget: 'websiteModal',
+    });
+    $("#demo03").animatedModal({
+        modalTarget: 'designModal',
+    });
 
+    $(document).on('click','.social a', function(e){ 
+        console.log('here')
+        e.preventDefault(); 
+        var url = $(this).attr('href'); 
+        window.open(url, '_blank');
+    });
     // Contact Form 	
 
     // validate contact form
